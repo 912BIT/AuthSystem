@@ -5,8 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AuthSystem"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Система авторизации" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid>
-        
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"> 
+            <TextBlock Text="Логин:" HorizontalAlignment="Center" Margin="0, 0, 50, 20" Width="50"/>
+            <TextBox x:Name="TextBoxLogin" HorizontalAlignment="Center" Width="200" Margin="0, 0, 0, 20"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Пароль:" HorizontalAlignment="Center" Margin="0, 0, 50, 20" Width="50"/>
+                <PasswordBox x:Name="TextBoxPassword" HorizontalAlignment="Center" Width="200" Margin="0, 0, 0, 20"/>
+            </StackPanel>
+
+            <Button x:Name="ButtonAuth" Content="Войти" Width="100" HorizontalAlignment="Center" Click="ButtonAuth_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
