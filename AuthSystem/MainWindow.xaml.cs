@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AuthSystem
 {
@@ -23,6 +10,22 @@ namespace AuthSystem
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ButtonAuth_Click(object sender, RoutedEventArgs e)
+        {
+            if (TextBoxLogin.Text == "User" && TextBoxPassword.Password == "12345")
+            {
+                MessageBox.Show("Вы успешно авторизировались", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                var secondWindow = new SecondWindow();
+                this.Hide();
+                secondWindow.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Неверный логин / пароль", "Авторизация", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }
